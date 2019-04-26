@@ -52,8 +52,6 @@ export class AuthService {
   SignUp(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -61,7 +59,7 @@ export class AuthService {
       })
   }
 
-  SignUpGuide(email, password) {
+  SignUpKeeper(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
         this.SetUserDataKeeper(result.user);
@@ -130,7 +128,8 @@ export class AuthService {
           localStorage.setItem('user', JSON.stringify(result.user));
         })
     }).catch((error) => {
-      window.alert(error)
+      console.log('faild to login');
+      window.alert(error);
     })
   }
 

@@ -21,19 +21,17 @@ import { TouristDashboardComponent } from 'src/app/components/tourist/tourist-da
 
 // Include route guard in routes array
 const routes: Routes = [
-  { path: '', component: LandingComponent},
-  { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
+  { path: '', component: LandingComponent, pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]},
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'wrong-route', component: WrongRouteComponent},
+  { path: 'keeper-dashboard', component: KeeperDashboardComponent, canActivate:[KeeperGuard]},
+  { path: 'tourist-dashboard', component: TouristDashboardComponent, canActivate:[TouristGuard]},
+  { path: '**', component: WrongRouteComponent}
 
-  { path: 'keeper-dashboard', component: KeeperDashboardComponent,canActivate:[KeeperGuard]},
-
-  { path: 'tourist-dashboard', component: TouristDashboardComponent,canActivate:[TouristGuard]}
-  
 
 ];
 

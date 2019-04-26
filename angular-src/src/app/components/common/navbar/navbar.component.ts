@@ -9,23 +9,22 @@ import { User } from "../../../shared/services/user";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  users: User[];
   user:User;
 
-  constructor(public authService: AuthService, private userService: UserService) { }
+  constructor(public authService: AuthService, public userService: UserService) { }
 
 
   isLogged(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null) ? true : false;
-
   }
 
   ngOnInit() {
     this.authService.getUser().subscribe( user => {
-      this.user = user;
+      if (user){
+        this.user = user;
+      }
     });
   }
 
 }
-

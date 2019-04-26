@@ -23,9 +23,9 @@ export class KeeperGuard implements CanActivate {
     return this.auth.user.pipe (
       take(1),
       map(data => data && data.roles.keeper && data.emailVerified? true : false),
-      tap(isGuide => {
-        if (!isGuide) {
-          console.log('Guides Only');
+      tap(isKeeper => {
+        if (!isKeeper) {
+          console.log('Keepers Only');
           this.router.navigate(['./wrong-route']);
         }
       })
