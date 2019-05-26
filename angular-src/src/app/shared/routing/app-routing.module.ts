@@ -26,7 +26,7 @@ import { BookingComponent } from 'src/app/components/booking/booking.component';
 
 // Include route guard in routes array
 const routes: Routes = [
-  { path: '', component: LandingComponent, pathMatch: 'full'},
+  { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]},
@@ -35,7 +35,6 @@ const routes: Routes = [
   { path: 'wrong-route', component: WrongRouteComponent},
   { path: 'keeper-dashboard', component: KeeperDashboardComponent, canActivate:[KeeperGuard]},
   { path: 'tourist-dashboard', component: TouristDashboardComponent, canActivate:[TouristGuard]},
-  { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent},
   { path: 'about', component: AboutComponent},
   { path: 'store-details/:id', component: HotelDetailComponent},
