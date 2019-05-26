@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import { Router } from '@angular/router';
-import { BookingComponent } from '../booking/booking.component';
+import { BookingComponent } from '../tourist/booking/booking.component';
 
 @Component({
   selector: 'app-confirm-booking-dialog',

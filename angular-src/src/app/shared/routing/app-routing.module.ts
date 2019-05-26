@@ -17,11 +17,11 @@ import { KeeperDashboardComponent } from 'src/app/components/keeper/keeper-dashb
 import { WrongRouteComponent } from 'src/app/components/common/wrong-route/wrong-route.component';
 import { LandingComponent } from 'src/app/components/common/landing/landing.component';
 import { TouristDashboardComponent } from 'src/app/components/tourist/tourist-dashboard/tourist-dashboard.component';
-import { HomeComponent } from 'src/app/components/home/home.component';
-import { SearchComponent } from 'src/app/components/search/search.component';
-import { AboutComponent } from 'src/app/components/about/about.component';
-import { HotelDetailComponent } from 'src/app/components/hotel-detail/hotel-detail.component';
-import { BookingComponent } from 'src/app/components/booking/booking.component';
+import { HomeComponent } from 'src/app/components/common/home/home.component';
+import { SearchComponent } from 'src/app/components/tourist/search/search.component';
+import { AboutComponent } from 'src/app/components/common/about/about.component';
+import { HotelDetailComponent } from 'src/app/components/tourist/hotel-detail/hotel-detail.component';
+import { BookingComponent } from 'src/app/components/tourist/booking/booking.component';
 
 
 // Include route guard in routes array

@@ -33,13 +33,13 @@ import { HotelService } from './shared/services/hotel.service';
 import { RatingPipe } from './classes/ratingpipe';
 import { PagerService } from './shared/services/pager.service';
 import { MatDatepickerModule, MatNativeDateModule, MatInputModule, MatDialogModule } from '@angular/material';
-import { ConfirmBookingDialogComponent } from './components/confirm-booking-dialog/confirm-booking-dialog.component';
-import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
-import { HotelDetailComponent } from './components/hotel-detail/hotel-detail.component';
-import { AboutComponent } from './components/about/about.component';
-import { SearchfilterComponent } from './components/searchfilter/searchfilter.component';
-import { BookingComponent } from './components/booking/booking.component';
+import { ConfirmBookingDialogComponent } from './components/tourist/confirm-booking-dialog/confirm-booking-dialog.component';
+import { HomeComponent } from './components/common/home/home.component';
+import { SearchComponent } from './components/tourist/search/search.component';
+import { HotelDetailComponent } from './components/tourist/hotel-detail/hotel-detail.component';
+import { AboutComponent } from './components/common/about/about.component';
+import { SearchfilterComponent } from './components/tourist/searchfilter/searchfilter.component';
+import { BookingComponent } from './components/tourist/booking/booking.component';
 
 @NgModule({
   declarations: [
