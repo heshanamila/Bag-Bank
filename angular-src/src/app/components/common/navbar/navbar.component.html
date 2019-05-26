@@ -1,29 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="['/']">BagBank</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="isLogged() && user.roles.admin === true" [routerLink]="['/dashboard']">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/tourist-dashboard']">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="isLogged() && user.roles.keeper === true" [routerLink]="['/keeper-dashboard']">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="!isLogged()"  [routerLink]="['/sign-in']">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a>
-            </li>
-        </ul>
-    </div>
+
+<nav class="transparent">
+  <div class="nav-wrapper">
+    <a  [routerLink]="['/']" class="brand-logo nava">Bag Bank</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down alr">
+      <li class="navd"><a *ngIf="isLogged() && user.roles.admin === true" [routerLink]="['/dashboard']">Dashboard</a></li>
+      <li><a class="navd" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/tourist-dashboard']">Dashboard</a></li>
+      <li><a class="navd" *ngIf="isLogged() && user.roles.keeper === true" [routerLink]="['/keeper-dashboard']">Dashboard</a></li>
+      <li><a class="navd" *ngIf="!isLogged()" [routerLink]="['/sign-in']">Login</a></li>
+      <li><a class="navd" *ngIf="isLogged()" (click)="authService.SignOut()">LOGOUT</a></li>
+    </ul>
+  </div>
 </nav>
