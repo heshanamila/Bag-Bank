@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 // Reactive Form
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -28,6 +29,17 @@ import { TouristDashboardComponent } from './components/tourist/tourist-dashboar
 import { LandingComponent } from './components/common/landing/landing.component';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
+import { HotelService } from './shared/services/hotel.service';
+import { RatingPipe } from './classes/ratingpipe';
+import { PagerService } from './shared/services/pager.service';
+import { MatDatepickerModule, MatNativeDateModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { ConfirmBookingDialogComponent } from './components/confirm-booking-dialog/confirm-booking-dialog.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { HotelDetailComponent } from './components/hotel-detail/hotel-detail.component';
+import { AboutComponent } from './components/about/about.component';
+import { SearchfilterComponent } from './components/searchfilter/searchfilter.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +53,19 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
     TouristDashboardComponent,
     WrongRouteComponent,
     LandingComponent,
-    NavbarComponent
+    NavbarComponent,
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    HotelDetailComponent,
+    AboutComponent,
+    RatingPipe,
+    SearchfilterComponent,
+    BookingComponent,
+    ConfirmBookingDialogComponent
+  ],
+  entryComponents: [
+    ConfirmBookingDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +73,21 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    MatInputModule, 
+    BrowserAnimationsModule, 
+    MatDialogModule
+  
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    HotelService, 
+    RatingPipe, 
+    PagerService
+  ],
   bootstrap: [AppComponent]
 })
 
