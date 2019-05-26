@@ -29,6 +29,7 @@ import { TouristDashboardComponent } from './components/tourist/tourist-dashboar
 import { LandingComponent } from './components/common/landing/landing.component';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
+import { NavbarOutComponent } from './components/common/navbar-out/navbar-out.component';
 import { HotelService } from './shared/services/hotel.service';
 import { RatingPipe } from './classes/ratingpipe';
 import { PagerService } from './shared/services/pager.service';
@@ -54,6 +55,7 @@ import { BookingComponent } from './components/tourist/booking/booking.component
     WrongRouteComponent,
     LandingComponent,
     NavbarComponent,
+    NavbarOutComponent,
     AppComponent,
     HomeComponent,
     SearchComponent,

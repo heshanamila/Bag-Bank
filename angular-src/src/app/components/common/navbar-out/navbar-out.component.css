@@ -1,0 +1,24 @@
+.transparent {
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background-color: rgb(0, 0, 0);
+}
+
+.navd {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.692);
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.nava {
+  text-decoration: none !important;
+  color: rgba(15, 15, 15, 0.76);
+  font-size: 30px;
+  margin-left: 10%;
+}
+
+.alr {
+  margin-right: 20px;
+}

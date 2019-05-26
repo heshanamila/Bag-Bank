@@ -5,3 +5,24 @@
 .priceinput {
     width: 70px;
 }
+
+.bt {
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+    font-size: 10px;
+}
+
+.form-control {
+    font-size: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.bt1 {
+    background-color: transparent;
+    border-color: transparent;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: black;
+}

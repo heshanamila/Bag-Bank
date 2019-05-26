@@ -4,11 +4,11 @@ import { UserService } from '../../../shared/services/user.service';
 import { User } from "../../../shared/services/user";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-navbar-out',
+  templateUrl: './navbar-out.component.html',
+  styleUrls: ['./navbar-out.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarOutComponent implements OnInit {
   user: User = {
     uid: '',
     displayName: '',
@@ -19,8 +19,8 @@ export class NavbarComponent implements OnInit {
       keeper: false,
       tourist: false,
       admin: false
+      }
     }
-  }
 
   constructor(public authService: AuthService, public userService: UserService) { }
 
@@ -43,5 +43,6 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
+
 
 }
