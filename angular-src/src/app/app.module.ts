@@ -41,6 +41,8 @@ import { HotelDetailComponent } from './components/tourist/hotel-detail/hotel-de
 import { AboutComponent } from './components/common/about/about.component';
 import { SearchfilterComponent } from './components/tourist/searchfilter/searchfilter.component';
 import { BookingComponent } from './components/tourist/booking/booking.component';
+import { KeepersListComponent } from './components/admin/keepers-list/keepers-list.component';
+import { TouristsListComponent } from './components/admin/tourists-list/tourists-list.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { BookingComponent } from './components/tourist/booking/booking.component
     RatingPipe,
     SearchfilterComponent,
     BookingComponent,
-    ConfirmBookingDialogComponent
+    ConfirmBookingDialogComponent,
+    KeepersListComponent,
+    TouristsListComponent
   ],
   entryComponents: [
     ConfirmBookingDialogComponent

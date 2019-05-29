@@ -22,6 +22,8 @@ import { SearchComponent } from 'src/app/components/tourist/search/search.compon
 import { AboutComponent } from 'src/app/components/common/about/about.component';
 import { HotelDetailComponent } from 'src/app/components/tourist/hotel-detail/hotel-detail.component';
 import { BookingComponent } from 'src/app/components/tourist/booking/booking.component';
+import { KeepersListComponent } from 'src/app/components/admin/keepers-list/keepers-list.component';
+import { TouristsListComponent } from 'src/app/components/admin/tourists-list/tourists-list.component';
 
 
 // Include route guard in routes array
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard]},
+  { path: 'tourists-list', component: TouristsListComponent, canActivate: [AdminGuard]},
+  { path: 'keepers-list', component: KeepersListComponent, canActivate: [AdminGuard]},
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'wrong-route', component: WrongRouteComponent},
