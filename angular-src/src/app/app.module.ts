@@ -41,7 +41,7 @@ import { HotelDetailComponent } from './components/tourist/hotel-detail/hotel-de
 import { AboutComponent } from './components/common/about/about.component';
 import { SearchfilterComponent } from './components/tourist/searchfilter/searchfilter.component';
 import { BookingComponent } from './components/tourist/booking/booking.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +81,8 @@ import { BookingComponent } from './components/tourist/booking/booking.component
     MatNativeDateModule, 
     MatInputModule, 
     BrowserAnimationsModule, 
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   
   ],
   providers: [
