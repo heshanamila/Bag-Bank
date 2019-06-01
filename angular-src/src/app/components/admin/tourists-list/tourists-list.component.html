@@ -1,0 +1,86 @@
+<div class="wrapper ">
+  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="logo">
+      <a [routerLink]="['/']" class="simple-text logo-normal">
+        Bag Bank
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dashboard']">
+            <span class="glyphicon glyphicon-user"></span>
+            User Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/keepers-list']">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            Keepers
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/tourists-list']">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            Tourists
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="authService.SignOut()">
+            <span class="glyphicon glyphicon-off"></span>Log out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title ">Guide List</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Email
+                      </th>
+                      <th>
+                        State
+                      </th>
+                    </thead>
+                    <tbody *ngIf="users?.length > 0">
+                      <tr *ngFor="let user of users">
+                        <td *ngIf="user.roles.tourist == true">
+                          <p style="font-size:15px"><strong>{{user.displayName}}</strong></p>
+                        </td>
+                        <td *ngIf="user.roles.tourist == true">
+                          <p style="font-size:15px">{{user.email}}</p>
+                        </td>
+                        <td *ngIf="user.roles.tourist == true">
+                          <button *ngIf="user.roles.tourist == true && user.emailVerified == false"
+                            class="btn btn-success" (click)="AuthService.AcceptUserDataGuide(user)">Confirm</button>
+                          <button *ngIf="user.roles.tourist == true && user.emailVerified == true"
+                            class="btn disabled btn-primary"
+                            (click)="AuthService.AcceptUserDataGuide(user)">Confirmed</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

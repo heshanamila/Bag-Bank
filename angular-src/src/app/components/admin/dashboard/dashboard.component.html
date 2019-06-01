@@ -13,25 +13,25 @@
           <ul class="nav">
             <li class="nav-item active">
               <a class="nav-link" [routerLink]="['/dashboard']">
-                <i class="material-icons">person</i>
-                <p>User Profile</p>
+                <span class="glyphicon glyphicon-user"></span>
+                User Profile
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/keepers']">
-                <i class="material-icons">library_books</i>
-                <p>Keepers</p>
+              <a class="nav-link" [routerLink]="['/keepers-list']">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                Keepers
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/tourists']">
-                <i class="material-icons">library_books</i>
-                <p>Tourists</p>
+              <a class="nav-link" [routerLink]="['/tourists-list']">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                Tourists
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" (click)="authService.SignOut()">
-                <i class="material-icons">logout</i>Log out
+                <span class="glyphicon glyphicon-off"></span>Log out
               </a>
             </li>
           </ul>

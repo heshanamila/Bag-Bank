@@ -4,7 +4,7 @@
   <div class="nav-wrapper">
     <a  [routerLink]="['/']" class="brand-logo nava">Bag Bank</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down alr">
-      <li class="navd"><a *ngIf="isLogged() && user.roles.admin === true" [routerLink]="['/dashboard']">Dashboard</a></li>
+      <li><a class="navd" *ngIf="isLogged() && user.roles.admin === true" [routerLink]="['/dashboard']">Dashboard</a></li>
       <li><a class="navd" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/tourist-dashboard']">Dashboard</a></li>
       <li><a class="navd" *ngIf="isLogged() && user.roles.keeper === true" [routerLink]="['/keeper-dashboard']">Dashboard</a></li>
       <li><a class="navd" *ngIf="!isLogged()" [routerLink]="['/sign-in']">Login</a></li>
