@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="emptydiv"></div>
+<div class="emptydiv">
+
+</div>
 <app-searchfilter (clicked)="onClicked($event)" (sortByChanged)="onSortByChanged($event)" (sortOptionChanged)="onSortOptionChanged($event)" (filterChanged)="onFilterChanged($event)" (hotelTypeChanged)="onHotelTypeChanged($event)" (minPriceChanged)="onMinPriceChanged($event)" (maxPriceChanged)="onMaxPriceChanged($event)"></app-searchfilter>
 <div *ngIf=hotels.length>
 <div class="container">

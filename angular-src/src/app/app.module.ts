@@ -41,6 +41,7 @@ import { HotelDetailComponent } from './components/tourist/hotel-detail/hotel-de
 import { AboutComponent } from './components/common/about/about.component';
 import { SearchfilterComponent } from './components/tourist/searchfilter/searchfilter.component';
 import { BookingComponent } from './components/tourist/booking/booking.component';
+import { HttpClientModule } from '@angular/common/http';
 import { KeepersListComponent } from './components/admin/keepers-list/keepers-list.component';
 import { TouristsListComponent } from './components/admin/tourists-list/tourists-list.component';
 
@@ -85,7 +86,8 @@ import { TouristsListComponent } from './components/admin/tourists-list/tourists
     MatNativeDateModule, 
     MatInputModule, 
     BrowserAnimationsModule, 
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   
   ],
   providers: [

@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   selectedCity: String;
   sortByFilter: string;
   hotels: Hotel[];
+  hotels2 : any[] = [];
+  hotels3 : any[] = [];
   selectedHotel: Hotel;
   filteredHotels: Hotel[];
   filteredHotelsbyCity: Hotel[];
@@ -39,8 +41,11 @@ export class SearchComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.getHotels();
-    this.selectedCity = this.hotelService.currentCity;
+    console.log("yoyo788")
+
+    this.getHotelData5()
+        setTimeout(() => {
+      this.selectedCity = this.hotelService.currentCity;
     if (this.selectedCity !== undefined && this.selectedCity.length !== 0) {
       this.filteredHotelsbyCity = this.hotels.filter(hotel => hotel.address.city.toLowerCase() === this.selectedCity.toLowerCase());
     } else {
@@ -55,11 +60,40 @@ export class SearchComponent implements OnInit {
 
     // initialize to page 1
     this.setPage(1);
+    
+    console.log("yoyo")
+  },1000)
   }
 
-  getHotels(): void {
-    this.hotels = this.hotelService.getHotelData();
+  getHotels(): any {
+    this.hotels = this.hotelService.getHotelData5();
+ 
   }
+
+  decodeUser(json:any): Hotel {
+    return Object.assign({}, json,);
+  }
+
+  check ():any{
+    this.hotelService.getHotelData2().subscribe(
+      dta => {
+        console.log(dta);
+      },
+      err => console.error(err)
+
+    )
+  }
+
+  getHotelData5(): any {
+      
+    const promise = new Promise((resolve, reject) => {
+     var t =  this.getHotels()
+     if (t) {
+       resolve(t)
+     }
+    
+  })
+}
 
   setPage(page: number) {
     console.log(' In setPage() : ' + page);

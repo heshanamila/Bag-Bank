@@ -7,32 +7,69 @@ import { Booking } from '../../classes/booking';
 import { Observable } from 'rxjs';
 import { Observer } from 'rxjs';
 import { Subject } from 'rxjs';
-import { share } from 'rxjs/operators';
+import  'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable()
 export class HotelService {
+  hotels1 : Hotel[];
+  hotels2 : any[] = [];
+  hotels3 : Hotel[] = [];
+
   currentCity: string;
   private subject = new Subject<Booking>();
   booking_details: Observable<Booking>;
   booking_det: Booking;
   // private observer: Observer<Booking>;
 
-  constructor() {
+  constructor(private http:HttpClient) {
     console.log('\n\n-----------in constructor of service---------');
-    // make the observable sharable
-   /* this.booking_details = new Observable<Booking>(observer =>
-      this.observer = observer
-    ).share();*/
+  
   }
 
-  getHotelData(): any {
-    return HOTELS;
+  getHotelData4(): any {
+
+    this.hotels1 = HOTELS;
+    
+  
+    
   }
+
+  getHotelData2(): any {
+    return this.http.get('http://localhost:3300/stores/stores');
+  }
+
+  decodeUser(json:any): Hotel {
+    return Object.assign({}, json,);
+  }
+
+  getHotelData5(): any {
+    this.getHotelData2().subscribe(
+      data => { 
+        var t = 0;
+        while (t <2) {
+        this.hotels2.push(this.decodeUser(data[t]));
+        t = t + 1;
+
+        }
+      },
+       err => console.error(err),
+      
+
+    )
+  return this.hotels2;
+  }
+
 
   getHotelById(id: String): Hotel {
-    const hotels = this.getHotelData();
-    console.log('\n ----------- hotels ------------');
-    console.log(hotels);
+    const hotels = this.getHotelData5();
+  
     for (let i = 0; i < hotels.length; i++) {
       if (hotels[i].id === id) {
         return hotels[i];
