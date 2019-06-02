@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-module.exports = mongoose.model("Blog", new Schema({
+module.exports = mongoose.model("Booking", new Schema({
     firstname: String,
     lastname: String,
     email: String,

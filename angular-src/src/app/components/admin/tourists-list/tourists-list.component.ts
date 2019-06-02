@@ -13,7 +13,7 @@ export class TouristsListComponent implements OnInit {
   users: User[];
 
   constructor(private userService: UserService, 
-              public AuthService: AuthService) { }
+              public authService: AuthService) { }
 
   getUsr() {
     const usr = JSON.parse(localStorage.getItem('users'));
