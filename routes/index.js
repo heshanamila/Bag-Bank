@@ -1,11 +1,18 @@
 var app             = require("express");
 var router          = app.Router();
-var booking            = require("../models/booking");
+var booking         = require("../models/booking");
 
 // =========================================
 //              Angular Routes
 // =========================================
 
+/**
+ * Angular Render Update booking
+ */
+router.get('/booking', (req, res) => {
+    booking.find()
+      .then(booking => res.json(booking));
+});
 /**
  * Angular Render Update booking
  */

@@ -34,7 +34,8 @@ app.get('/*', function(req, res, next) {
     }
 });
 
-app.use("/", require("./routes"));
+app.use("/", require("./routes/index"));
+app.use("/stores", require("./routes/stores"));
 //app.use("/test", require("./routes/testUser"));
 
 var port = process.env.PORT || 3000;
