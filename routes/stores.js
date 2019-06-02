@@ -3,7 +3,7 @@ var router = express.Router();
 var stores = require('../controllers/store-controller');
 
 
-router.route('/')
+router.route('/') 
     .get(stores.storesGetAll);
 
 

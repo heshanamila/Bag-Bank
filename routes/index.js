@@ -11,7 +11,7 @@ var booking         = require("../models/booking");
  */
 router.get('/booking', (req, res) => {
     booking.find()
-      .then(booking => res.json(booking));
+      .then(booking => res.json(booking)); 
 });
 /**
  * Angular Render Update booking
